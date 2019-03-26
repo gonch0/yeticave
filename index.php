@@ -5,6 +5,26 @@ $user_name = 'Полковник';
 $user_avatar = 'img/user.jpg';
 
 
+function cut_text($text, $num_letters) {
+	$num = mb_strlen($text);
+
+	if ($num > $num_letters) {
+		$text = mb_substr($text, 0, $num_letters);
+		$text .= "…";
+	}
+
+	return $text;
+}
+
+function format_cost($cost) {
+	$num = ceil($cost);
+
+	if ($num > 1000) {
+		$num = number_format ($num, 0 , " " , " ");
+	}
+
+	return $num .= " ₽";
+}
 
 
 
@@ -72,7 +92,7 @@ $user_avatar = 'img/user.jpg';
             <h2>Открытые лоты</h2>
         </div>
         <ul class="lots__list">
-            <!--заполните этот список из массива с товарами (Задание 2-2)-->
+            <!--заполните этот список из массива с товарами (Задание 2-1)-->
 
             <?php 
                 $categories = ["Доски и лыжи", "Крепления", "Ботинки", "Одежда", "Инструменты", "Разное"];
@@ -82,7 +102,7 @@ $user_avatar = 'img/user.jpg';
                     [
                         'name' => '2014 Rossignol District Snowboard',
                         'category' => $categories[0],
-                        'cost' => 10999,
+                        'cost' => 999,
                         'url' => 'img/lot-1.jpg'
                     ],
                     [
@@ -131,7 +151,7 @@ $user_avatar = 'img/user.jpg';
                         <div class="lot__state">
                             <div class="lot__rate">
                                 <span class="lot__amount">Стартовая цена</span>
-                                <span class="lot__cost"><?=$value['cost']?><b class="rub">р</b></span>
+                                <span class="lot__cost"><?=format_cost($value['cost'])?></span>
                             </div>
                             <div class="lot__timer timer">
                                 12:23
