@@ -76,7 +76,7 @@
 
     date_default_timezone_set("Europe/Moscow");
     
-    $today = date('d.m.Y h:i');
+    $today = date('d.m.Y H:i');
     $curMinutes = date('i');
     $tomorrow = date('d.m.Y 00:00', strtotime($today."+1 day"));
 
