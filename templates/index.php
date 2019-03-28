@@ -37,7 +37,7 @@
                             <span class="lot__cost"><?=format_cost(filter_text($value['cost']))?></span>
                         </div>
                         <div class="lot__timer timer">
-                            12:23
+                            <?=$timer?>
                         </div>
                     </div>
                 </div>

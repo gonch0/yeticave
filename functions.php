@@ -16,3 +16,5 @@
     function filter_text($str) {
         return htmlspecialchars($str);
     }    
+
+
