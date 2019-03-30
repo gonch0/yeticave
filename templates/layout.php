@@ -12,7 +12,7 @@
 <header class="main-header">
     <div class="main-header__container container">
         <h1 class="visually-hidden">YetiCave</h1>
-        <a class="main-header__logo">
+        <a class="main-header__logo" href="http://localhost">
             <img src="img/logo.svg" width="160" height="39" alt="Логотип компании YetiCave">
         </a>
         <form class="main-header__search" method="get" action="https://echo.htmlacademy.ru">
@@ -63,7 +63,7 @@
             ?>
         
             <?php while($index < $num_count):?>
-            <li class="nav__item"><a href="pages/all-lots.html"> <?= $categories[$index]; ?> </a></li>                
+                <li class="nav__item"><a href="pages/all-lots.html"> <?= $categories[$index]; ?> </a></li>                
             <?php $index = $index + 1; ?>
             <?php endwhile; ?>
         </ul>

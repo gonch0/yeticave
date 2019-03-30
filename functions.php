@@ -18,3 +18,12 @@
     }    
 
 
+    function format_cost($cost) {
+        $num = ceil($cost);
+
+        if ($num > 1000) {
+            $num = number_format ($num, 0 , " " , " ");
+        }
+
+        return $num .= " ₽";
+    }
